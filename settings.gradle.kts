@@ -1,3 +1,6 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+
 pluginManagement {
     repositories {
         google {
@@ -21,3 +24,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "Pokemon"
 include(":app")
+include(":core:common")
+include(":core:navigation")
+include(":core:database")
+include(":core:network")
+include(":core:designsystem")
+include(":feature:detail:api")
+include(":feature:detail:impl")
+include(":feature:list:api")
+include(":feature:list:impl")

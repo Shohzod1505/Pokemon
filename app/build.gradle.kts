@@ -1,18 +1,20 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "ru.itis.kpfu.pokemon"
-    compileSdk = 34
+    namespace = ProjectConfig.applicationId
+    compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
-        applicationId = "ru.itis.kpfu.pokemon"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ProjectConfig.applicationId
+        minSdk = ProjectConfig.minSdk
+        targetSdk = ProjectConfig.targetSdk
+        versionCode = ProjectConfig.versionCode
+        versionName = ProjectConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,22 +29,37 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(projects.core.common)
+    implementation(projects.core.database)
+    implementation(projects.core.navigation)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.network)
+    implementation(projects.feature.list.api)
+    implementation(projects.feature.list.impl)
+    implementation(projects.feature.detail.api)
+    implementation(projects.feature.detail.impl)
+
+    implementation(libs.bundles.ktx)
+    implementation(libs.bundles.ui)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(libs.bundles.room)
+    kapt(libs.room.compiler)
+    implementation(libs.bundles.retrofit)
+    implementation(libs.cicerone)
+    implementation(libs.bundles.coroutines)
+    implementation(libs.bundles.test)
 }
