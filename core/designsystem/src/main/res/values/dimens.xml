@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius">32dp</dimen>
+    <dimen name="screen_margin">16dp</dimen>
+    <dimen name="view_margin">8dp</dimen>
+    <dimen name="image_size">144dp</dimen>
+
+    <dimen name="title">24sp</dimen>
+    <dimen name="button">20sp</dimen>
+    <dimen name="text">16sp</dimen>
+</resources>

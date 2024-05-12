@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pokemon_types">Types:\u00A0</string>
+    <string name="pokemon_weight">Weight:\u00A0</string>
+    <string name="pokemon_height">Height:\u00A0</string>
+    <string name="pokemon_abilities">Abilities:\u00A0</string>
+    <string name="pokemon_hp">Hp:\u00A0</string>
+    <string name="pokemon_speed">Speed:\u00A0</string>
+    <string name="pokemon_attack">Attack:\u00A0</string>
+    <string name="pokemon_special_attack">Special Attack:\u00A0</string>
+    <string name="pokemon_defense">Defense:\u00A0</string>
+    <string name="pokemon_special_defense">Special Defense:\u00A0</string>
+    <string name="button_back">Back</string>
+</resources>

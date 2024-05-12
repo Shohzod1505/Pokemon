@@ -9,7 +9,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.itis.kpfu.core.network.BuildConfig
 import ru.itis.kpfu.core.network.data.PokemonApi
-import ru.itis.kpfu.core.network.data.interceptor.ApiKeyInterceptor
 import ru.itis.kpfu.core.network.data.repository.PokemonRepositoryImpl
 import ru.itis.kpfu.core.network.domain.PokemonRepository
 import java.util.concurrent.TimeUnit
@@ -21,10 +20,8 @@ internal class NetworkModule {
     @Provides
     fun provideHttpClient(
         @Named("logging") loggingInterceptor: Interceptor,
-        @Named("api") apiKeyInterceptor: Interceptor,
     ): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(loggingInterceptor)
-        .addInterceptor(apiKeyInterceptor)
         .connectTimeout(10L, TimeUnit.SECONDS)
         .build()
 
@@ -48,10 +45,6 @@ internal class NetworkModule {
             HttpLoggingInterceptor.Level.NONE
         }
     }
-
-    @Provides
-    @Named("api")
-    fun provideApiKeyInterceptor(): Interceptor = ApiKeyInterceptor()
 
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()

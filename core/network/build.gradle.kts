@@ -17,7 +17,6 @@ android {
 
     buildTypes.all {
         buildConfigField("String", "API_ENDPOINT", keystoreProperties["baseUrl"] as String)
-        buildConfigField("String", "API_KEY", keystoreProperties["apiKey"] as String)
     }
 
     buildFeatures {

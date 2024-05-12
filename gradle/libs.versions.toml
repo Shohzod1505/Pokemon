@@ -14,10 +14,11 @@ retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.11"
 cicerone = "7.1"
 detekt = "1.23.3"
-parcelize = "2.0.0-RC2"
+adapterdelegate = "4.3.2"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
+coil = "2.6.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -28,7 +29,13 @@ lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-view
 # UI
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Glide
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide"}
+
+# Coil
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil"}
 
 # Dagger
 dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
@@ -49,6 +56,10 @@ retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson"
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
+#Adapter Delegate
+adapterdelegate = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapterdelegate"}
+adapterdelegate-viewbinding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapterdelegate"}
+
 #Navigation
 cicerone = { group = "com.github.terrakok", name = "cicerone", version.ref = "cicerone" }
 
@@ -59,17 +70,12 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 
 [bundles]
 ktx = ["core-ktx", "fragment-ktx", "lifecycle-runtime-ktx", "lifecycle-viewmodel-ktx"]
-ui = ["appcompat", "material", "glide"]
+ui = ["appcompat", "material", "coil"]
 coroutines = ["coroutines-core", "coroutines-android"]
 room = ["room-runtime", "room-ktx"]
 retrofit = ["retrofit", "retrofit-converter", "okhttp", "okhttp-logging-interceptor"]
+adapter = ["adapterdelegate", "adapterdelegate-viewbinding"]
 test = ["junit", "androidx-test-ext-junit"]
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 detektApplication = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "parcelize"}
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
-

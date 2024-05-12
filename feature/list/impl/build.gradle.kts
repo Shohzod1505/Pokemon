@@ -26,4 +26,7 @@ dependencies {
     kapt(libs.dagger.compiler)
     implementation(libs.cicerone)
     implementation(libs.bundles.coroutines)
+    implementation(libs.bundles.adapter)
+    implementation(libs.glide)
+    kapt(libs.glide.compiler)
 }

@@ -6,9 +6,9 @@ import kotlinx.parcelize.Parcelize
 /**
  * Модель данных для [PokemonDetailScreen].
  * Реализует интерфейс Parcelable для возможности передачи между компонентами приложения.
- * @property id Уникальный идентификатор [PokemonDetailScreen].
+ * @property name Имя покемона [PokemonDetailScreen].
  */
 @Parcelize
 data class PokemonDetailScreenModel(
-    val id: Int
+    val name: String?,
 ) : Parcelable
